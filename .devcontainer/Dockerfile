@@ -1,5 +1,5 @@
 # Update the VARIANT arg in docker-compose.yml to pick an Elixir version: 1.9, 1.10, 1.10.4
-ARG VARIANT=latest
+ARG VARIANT="1.13.4"
 FROM elixir:${VARIANT}
 
 # This Dockerfile adds a non-root user with sudo access. Update the “remoteUser” property in
@@ -11,11 +11,11 @@ ARG USER_GID=$USER_UID
 # Options for common package install script
 ARG INSTALL_ZSH="true"
 ARG UPGRADE_PACKAGES="true"
-ARG COMMON_SCRIPT_SOURCE="https://raw.githubusercontent.com/microsoft/vscode-dev-containers/v0.192.0/script-library/common-debian.sh"
-ARG COMMON_SCRIPT_SHA="53c6267bf57b4ea6bb6128ba2e415f15831f2db42b140080e2d789327dff572e"
+ARG COMMON_SCRIPT_SOURCE="https://raw.githubusercontent.com/microsoft/vscode-dev-containers/v0.233.0/script-library/common-debian.sh"
+ARG COMMON_SCRIPT_SHA="ab4609258940b032d02ed08d4c776e9e66e1a2a21dd2f3313a8fc1c4fee607d0"
 
 # Optional Settings for Phoenix
-ARG PHOENIX_VERSION="1.6.2"
+ARG PHOENIX_VERSION="1.6.7"
 
 ARG NODE_SCRIPT_SOURCE="https://raw.githubusercontent.com/microsoft/vscode-dev-containers/main/script-library/node-debian.sh"
 ARG NODE_SCRIPT_SHA="dev-mode"
@@ -25,7 +25,7 @@ ENV NVM_SYMLINK_CURRENT=true
 ENV PATH=${NVM_DIR}/current/bin:${PATH}
 
 # [Choice] Node.js version: none, lts/*, 16, 14, 12, 10
-ARG NODE_VERSION="lts/*"
+ARG NODE_VERSION="none"
 
 # Install needed packages and setup non-root user. Use a separate RUN statement to add your own dependencies.
 RUN apt-get update \
