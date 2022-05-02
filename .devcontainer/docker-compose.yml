@@ -6,9 +6,9 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        VARIANT: "1.12.3"
-        PHOENIX_VERSION: "1.6.0"
-        NODE_VERSION: "14"
+        VARIANT: "1.13.4"
+        PHOENIX_VERSION: "1.6.7"
+        NODE_VERSION: "none"
 
     volumes:
       - ..:/workspace:cached
@@ -24,9 +24,9 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
     environment:
-      POSTGRES_USER: gbook
-      POSTGRES_PASSWORD: gbook_pass
-      POSTGRES_DB: gbook_dev
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: app
 
 volumes:
   postgres-data:
