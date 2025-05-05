@@ -6,9 +6,9 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        VARIANT: "1.16.0"
-        PHOENIX_VERSION: "1.7.10"
-        NODE_VERSION: "20"
+        VARIANT: "1.18.3"
+        PHOENIX_VERSION: "1.7.21"
+        NODE_VERSION: "23"
 
     volumes:
       - ..:/workspace:cached
